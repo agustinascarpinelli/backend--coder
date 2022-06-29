@@ -1,0 +1,27 @@
+head
+  meta(charset='utf-8')
+  title Form "Products with PUG"
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+
+  body
+
+  if products.length>0
+   div(class="table-responsive")
+    table(class='table', style="background:black;")
+      tr(style="color: red;")
+        th Title 
+        th Price 
+        th Image
+
+      each prod in products
+        tr
+         td= prod.title
+         td= prod.price 
+         td
+           img(src=prod.thumbnail, style='width:5rem;height:auto')
+    table
+   a(href="./") Add a product
+
+  else
+     h2(class="alert alert-danger") There's no products to show
+     a(href="./") Add a product

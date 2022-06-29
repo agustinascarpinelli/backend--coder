@@ -1,0 +1,27 @@
+head
+  meta(charset='utf-8')
+  title Form "Products with PUG"
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+
+  body
+    .modal-dialog
+        .modal-content
+          
+          .modal-header
+            h4#myModalLabel.modal-title
+              | Add a product
+          
+          .modal-body
+           
+            form(role='form' method='POST' action='/products')
+              div.form-group
+                label(for='title') Title:
+                input#title.form-control(type='text', placeholder='title' name='title')
+              div.form-group
+                label(for='price') Price:
+                input#price.form-control(type='number', placeholder='price' name='price')
+              div.form-group
+                label(for='thumbnail') Price:
+                input#thumbnail.form-control(type='text', placeholder='thumbnail' name='thumbnail')
+              button.btn.btn-primary(type="submit") Submit
+              a(href="./products") Show the list of products
